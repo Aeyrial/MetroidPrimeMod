@@ -25,27 +25,12 @@ public class Main
 	public static CommonProxy proxy;
 	
 	@EventHandler
-	public static void preInit(FMLPreInitializationEvent event)
-	{
-		ModItems.init();
-		ModItems.register();
-		
-		ModBlocks.init();
-		ModBlocks.register();
-	}
+	public static void preInit(FMLPreInitializationEvent event){}
 	
 	@EventHandler
-	public static void init(FMLInitializationEvent event)
-	{
-		proxy.init();
-		
-		ModCrafting.register();
-	}
+	public static void init(FMLInitializationEvent event){}
 	
 	@EventHandler
-	public static void PostInit(FMLPostInitializationEvent event)
-	{
-		
-	}
+	public static void postInit(FMLPostInitializationEvent event){}
 	
 }

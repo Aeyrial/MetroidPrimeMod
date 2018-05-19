@@ -1,20 +1,22 @@
-package com.aeyrial.metroidprimemod.items;
+package com.aeyrial.metroidprimemod.armour;
 
 import com.aeyrial.metroidprimemod.Main;
 import com.aeyrial.metroidprimemod.init.ModItems;
 import com.aeyrial.metroidprimemod.util.IHasModel;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 
-public class ItemBase extends Item implements IHasModel
+public class ArmourBase extends ItemArmor implements IHasModel
 {
-
-	public ItemBase(String name)
+	public ArmourBase(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn)
 	{
+		super(materialIn, renderIndexIn, equipmentSlotIn);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(CreativeTabs.MATERIALS);
+		setCreativeTab(CreativeTabs.TOOLS);
 		
 		ModItems.ITEMS.add(this);
 	}
@@ -25,5 +27,4 @@ public class ItemBase extends Item implements IHasModel
 		Main.proxy.registerItemRenderer(this, 0, "inventory");
 		
 	}
-
 }

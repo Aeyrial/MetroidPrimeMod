@@ -1,20 +1,20 @@
-package com.aeyrial.metroidprimemod.items;
+package com.aeyrial.metroidprimemod.tools;
 
 import com.aeyrial.metroidprimemod.Main;
 import com.aeyrial.metroidprimemod.init.ModItems;
 import com.aeyrial.metroidprimemod.util.IHasModel;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemHoe;
 
-public class ItemBase extends Item implements IHasModel
+public class ToolHoe extends ItemHoe implements IHasModel
 {
 
-	public ItemBase(String name)
-	{
+	public ToolHoe(String name, ToolMaterial material) {
+		super(material);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(CreativeTabs.MATERIALS);
+		setCreativeTab(CreativeTabs.TOOLS);
 		
 		ModItems.ITEMS.add(this);
 	}
@@ -25,5 +25,4 @@ public class ItemBase extends Item implements IHasModel
 		Main.proxy.registerItemRenderer(this, 0, "inventory");
 		
 	}
-
 }
