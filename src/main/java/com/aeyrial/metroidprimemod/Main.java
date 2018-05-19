@@ -1,5 +1,8 @@
 package com.aeyrial.metroidprimemod;
 
+import com.aeyrial.metroidprimemod.init.ModBlocks;
+import com.aeyrial.metroidprimemod.init.ModCrafting;
+import com.aeyrial.metroidprimemod.init.ModItems;
 import com.aeyrial.metroidprimemod.proxy.CommonProxy;
 import com.aeyrial.metroidprimemod.util.Reference;
 
@@ -22,19 +25,25 @@ public class Main
 	public static CommonProxy proxy;
 	
 	@EventHandler
-	public static void PreInit(FMLPreInitializationEvent event)
+	public static void preInit(FMLPreInitializationEvent event)
 	{
+		ModItems.init();
+		ModItems.register();
 		
+		ModBlocks.init();
+		ModBlocks.register();
 	}
 	
 	@EventHandler
 	public static void init(FMLInitializationEvent event)
 	{
+		proxy.init();
 		
+		ModCrafting.register();
 	}
 	
 	@EventHandler
-	public static void Postinit(FMLPostInitializationEvent event)
+	public static void PostInit(FMLPostInitializationEvent event)
 	{
 		
 	}
